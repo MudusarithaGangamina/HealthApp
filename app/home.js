@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, FlatList, ActivityIndicator, TouchableOpacity, Image } from "react-native";
+import { LinearGradient } from 'expo-linear-gradient';
 import axios from 'axios'; // Import axios to make API requests
 import { useAuth } from "./context/AuthContext"; // Ensure you have this context set up
 // Floating button to display the click count
@@ -47,7 +48,7 @@ const Home = () => {
     fetchHealthTips();
   }, []); // Empty dependency array to run only once when the component mounts
   return (
-    <View style={styles.container}>
+    <LinearGradient colors={['#ff7e5f', '#feb47b']} style={styles.container}>
       <Text style={styles.title}>Welcome, {user?.username ?? 'Guest'}!</Text>
       {/* Main content container */}
       <View style={styles.contentContainer}>
@@ -86,13 +87,12 @@ const Home = () => {
           <Text style={styles.logoutText}>Logout</Text>
         </TouchableOpacity>
       </View>
-    </View>
+      </LinearGradient>
   );
 };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     padding: 20,
   },
   title: {
@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginVertical: 20,
+    color: '#fff'
   },
   contentContainer: {
     flex: 1,
