@@ -52,7 +52,7 @@ const Home = () => {
       <View style={styles.header}>
         <View>
           <Text style={styles.title}>Hello, {user?.username ?? 'Guest'}!</Text>
-          <Text style={styles.subtitle}>Welcome to the HealthTipsApp</Text>
+          <Text style={styles.subtitle}>Welcome to the Health Tips App</Text>
         </View>
         <TouchableOpacity style={styles.logoutButtonHeader} onPress={() => logout()}>
           <Text style={styles.logoutText}>Logout</Text>
